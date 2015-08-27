@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>Instangular</h1>
+	<h3>Search #tags</h3>
+	<form class="form-inline" ng-submit="searchTag()">
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="tag" placeholder="Tag here">
+			<input type="submit" value="Search" class="btn btn-primary">
+		</div>
+	</form>
+	<hr>
+	<div class="row" ng-show="photos.length > 0">
+		<div class="col-md-3" ng-repeat="photo in photos">
+			<div class="thumbnail">
+				<img ng-src="{{photo.images.standard_resolution.url}}" alt="Instagram Photo">
+				<br>
+				<p>@{{photo.user.username}}
+					<span class="pull-right">
+						<span class="glyphicon glyphicon-heart"></span>	
+						<ng-pluralize count="{{photo.likes.count}}" when="{'one': '1 like', 'other': '{} likes'}"></ng-pluralize>
+					</span>
+				</p>
+				<p><a class="btn btn-success" href="javascript:void(0)" ng-click="savePhoto(photo)">Favorite</a></p>
+			</div>
+		</div>
+	</div>
+</div>
