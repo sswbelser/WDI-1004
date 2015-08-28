@@ -23,8 +23,6 @@ app.controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
 
 		localStorage.photos = JSON.stringify(allPhotos);
 
-		console.log(photo);
-		console.log(localStorage.photos);
 	};
 }]);
 
